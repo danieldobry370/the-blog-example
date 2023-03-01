@@ -1,8 +1,9 @@
-$primary: #900;
+$grey: #333333;
+$darkGrey: #222222;
 $enable-shadows: true;
 $prefix: "mo-";
 
-@import "../../sass/node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;900&display=swap');
 
 * {
@@ -11,7 +12,7 @@ $prefix: "mo-";
 }
 
 body {
-  background-color: #333333;
+  background-color: $grey;
 }
 
 a {
@@ -40,7 +41,7 @@ a {
 }
 
 .footer {
-  background-color: #222222;
+  background-color: $darkGrey;
 
   .logo,
   .nav-footer .logo {
@@ -80,11 +81,9 @@ a {
     }
   }
 
-  .article-box:hover {
-    h2,
-    .box:hover h3 {
-      text-decoration: underline;
-    }
+  .article-box:hover h2,
+  .box:hover h3 {
+    text-decoration: underline;
   }
 }
 
