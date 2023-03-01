@@ -10854,13 +10854,13 @@ a {
 .slice .half-box {
   height: 15rem;
 }
-.slice .box .content {
+.slice .article-box .content {
   z-index: 2;
 }
-.slice .box .content .footer-date {
+.slice .article-box .content .footer-date {
   opacity: 64%;
 }
-.slice .box:hover {
+.slice .article-box:hover {
   -webkit-transform: scale(1.025) !important;
   transform: scale(1.025) !important;
 }
@@ -10913,6 +10913,15 @@ a {
   .aside {
     display: none;
   }
+}
+.sticky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

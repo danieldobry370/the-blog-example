@@ -9,11 +9,7 @@ function closeNav() {
 window.addEventListener("load", (event) => {
     const countAll = document.querySelectorAll('.box').length;
     console.log(`Počet příspěvků: ${countAll}`);
-    const halfBoxes = document.querySelectorAll('.half-box').length;
-    const fullBoxes = document.querySelectorAll('.full-box').length;
-    const halfBoxHeight = document.querySelector('.half-box').offsetHeight;
-    const fullBoxHeight = document.querySelector('.full-box').offsetHeight;
-    const heightAll = halfBoxes * halfBoxHeight + fullBoxes * fullBoxHeight;
+    const heightAll = document.querySelectorAll('.half-box').length * document.querySelector('.half-box').offsetHeight + document.querySelectorAll('.full-box').length * document.querySelector('.full-box').offsetHeight;
     console.log(`Průměrná výška příspěvků: ${heightAll / countAll}px`);
     const header = document.querySelectorAll('.article-header');
     let totalCharacters = 0;
@@ -31,4 +27,8 @@ window.addEventListener("load", (event) => {
             });
         });
     });
+    const asideElement = document.querySelector('#aside');
+    const distanceFromViewportTop = asideElement.getBoundingClientRect().top;
+    console.log('Při scrollu vrátit pozici sociálních ikon vůči viewportu a dokumentu: ' + distanceFromViewportTop + 'px');
 });
+

@@ -66,7 +66,7 @@ a {
     height: 15rem;
   }
 
-  .box {
+  .article-box {
     .content {
       z-index: 2;
 
@@ -135,4 +135,14 @@ a {
   .aside {
     display: none;
   }
+}
+
+.sticky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
