@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 window.addEventListener("load", (event) => {
-    const countAll = document.querySelectorAll('.box').length;
+    const countAll = document.querySelectorAll('.article-box').length;
     console.log(`Počet příspěvků: ${countAll}`);
     const heightAll = document.querySelectorAll('.half-box').length * document.querySelector('.half-box').offsetHeight + document.querySelectorAll('.full-box').length * document.querySelector('.full-box').offsetHeight;
     console.log(`Průměrná výška příspěvků: ${heightAll / countAll}px`);
