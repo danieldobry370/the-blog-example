@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Daniel Dobrý">
+    <title>Testovací úloha - Daniel Dobrý</title>
+    <meta name="description" content="Tuto úlohu jsem zvládl vypracovat za 6 a půl hodiny, přičemž druhá polovina mi zabrala přibližně 3 hodiny. První den jsem úspěšně vyřešil většinu úkolu, včetně implementace moderních HTML5 a CSS principů, vytvoření klikatelných odkazů, ikon sociálních sítí a statického fialového banneru. Na druhý den jsem čekal na doplnění informací týkajících se práce s JavaScriptem. Celkově jsem splnil všechny požadavky úlohy.">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<header>
+    <nav class="nav position-relative">
+        <ul class="d-flex justify-content-between position-fixed w-100 list-unstyled p-5">
+            <li class="cursor-pointer">
+                <a onclick="openNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" style="enable-background:new 0 0 32 32;" viewBox="0 0 32 32" width="32px" xml:space="preserve"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" style="fill:#fff;"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="logo" src="img/logo.svg" alt="Logo blogu">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="28px" height="28px" viewBox="0 0 256 256" xml:space="preserve"><g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"><path d="M 87.803 77.194 L 68.212 57.602 c 9.5 -14.422 7.912 -34.054 -4.766 -46.732 c 0 0 -0.001 0 -0.001 0 c -14.495 -14.493 -38.08 -14.494 -52.574 0 c -14.494 14.495 -14.494 38.079 0 52.575 c 7.248 7.247 16.767 10.87 26.287 10.87 c 7.134 0 14.267 -2.035 20.445 -6.104 l 19.591 19.591 C 78.659 89.267 80.579 90 82.498 90 s 3.84 -0.733 5.305 -2.197 C 90.732 84.873 90.732 80.124 87.803 77.194 z M 21.48 52.837 c -8.645 -8.646 -8.645 -22.713 0 -31.358 c 4.323 -4.322 10 -6.483 15.679 -6.483 c 5.678 0 11.356 2.161 15.678 6.483 c 8.644 8.644 8.645 22.707 0.005 31.352 c -0.002 0.002 -0.004 0.003 -0.005 0.005 c -0.002 0.002 -0.003 0.003 -0.004 0.005 C 44.184 61.481 30.123 61.48 21.48 52.837 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/></g></svg>
+                </a>
+            </li>
+        </ul>
+        <ul id="sideNav" class="position-fixed bg-black list-unstyled h-100"  style="opacity:0; width: 0">
+            <li class="m-5 mt-4 pt-2 pb-5">
+                <a href="javascript:void(0)" class="display-4 float-right text-white" onclick="closeNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 256 256" xml:space="preserve"><g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"><path d="M 10 90 c -2.559 0 -5.119 -0.977 -7.071 -2.929 c -3.905 -3.905 -3.905 -10.237 0 -14.143 l 70 -70 c 3.906 -3.905 10.236 -3.905 14.143 0 c 3.905 3.905 3.905 10.237 0 14.143 l -70 70 C 15.119 89.023 12.559 90 10 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/><path d="M 80 90 c -2.56 0 -5.118 -0.977 -7.071 -2.929 l -70 -70 c -3.905 -3.905 -3.905 -10.237 0 -14.143 c 3.905 -3.905 10.237 -3.905 14.143 0 l 70 70 c 3.905 3.905 3.905 10.237 0 14.143 C 85.118 89.023 82.56 90 80 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/></g></svg>
+                </a>
+            </li>
+            <li class="m-5"><a href="#" class="text-white">Nullam lectus</a></li>
+            <li class="m-5"><a href="#" class="text-white">Nullam quis</a></li>
+            <li class="m-5"><a href="#" class="text-white">Nullam pulvinar</a></li>
+            <li class="m-5"> <a href="#" class="text-white">Nullam dapibus</a></li>
+            <li class="m-5"><a href="#" class="text-white">Pellentesque arcu</a></li>
+            <li class="m-5 pt-5 nav-footer">
+                <img class="logo" src="img/logo.svg" alt="Logo blogu">
+            </li>
+        </ul>
+    </nav>
+</header>
+<aside class="aside position-sticky m-2">
+    <ul class="position-absolute list-unstyled m-5">
+        <li class="my-3">
+            <a href="#">
+                <img src="img/facebook-f-brands.svg" height="20" alt="Odkaz na Facebook">
+            </a>
+        </li>
+        <li class="my-3">
+            <a href="#">
+                <img src="img/twitter-brands.svg" height="20" alt="Odkaz na Twitter">
+            </a>
+        </li>
+        <li class="my-3">
+            <a href="#">
+                <img src="img/instagram-brands.svg" height="20" alt="Odkaz na Instagram">
+            </a>
+        </li>
+        <li class="my-3">
+            <a href="#">
+                <img src="img/share-alt-solid.svg" height="20" alt="Odkaz pro sdílení">
+            </a>
+        </li>
+    </ul>
+</aside>
+<main role="main" class="container py-5 my-5">
+    <div class="slice py-5">
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <div class="box article-box full-box d-flex rounded-0 position-relative overflow-hidden" id="fullBox">
+                    <img class="position-absolute w-100 h-100" src="img/article1.jpg" alt="Náhledový obrázek">
+                    <div class="content h-100 p-5">
+                        <span class="bg-green px-3 py-2 text-uppercase font-weight-bold">Travel</span>
+                        <div class="d-flex h-100">
+                            <div class="align-self-end">
+                                <a href="#">
+                                    <h2 class="article-header text-white fs-3">Etiam quis quam. Nemo enim ipsam voluptatem quia.</h2>
+                                </a>
+                                <span class="text-white font-weight-light footer-date">May 25, 2048 / 9 min.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box full-box box-spacer d-flex rounded-0 position-relative overflow-hidden bg-purple-gradient">
+                    <div class="content h-100 p-5 m-auto">
+                        <div class="h-100">
+                            <img class="space-station-icon mx-auto d-block" src="img/space-station-moon-alt-duotone.svg" alt="Náhledový obrázek">
+                            <div class="align-self-end">
+                                <h2 class="text-white text-center font-weight-bold fs-3 mt-4">Discover content<br>from different universe</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="box article-box half-box d-flex rounded-0 position-relative overflow-hidden" id="halfBox">
+                    <img class="position-absolute w-100 h-100" src="img/article2.jpg" alt="Náhledový obrázek">
+                    <div class="content h-100 p-5">
+                        <span class="bg-green px-3 py-2 text-uppercase font-weight-bold">Travel</span>
+                        <div class="d-flex h-100">
+                            <div class="align-self-end">
+                                <a href="#">
+                                    <h3 class="article-header text-white fs-5">Etiam quis quam. Nemo enim ipsam voluptatem quia.</h3>
+                                </a>
+                                <span class="text-white font-weight-light footer-date">May 25, 2048 / 9 min.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box article-box half-box mt-4 d-flex rounded-0 position-relative overflow-hidden">
+                    <img class="position-absolute w-100 h-100" src="img/article3.jpg" alt="Náhledový obrázek">
+                    <div class="content h-100 p-5">
+                        <span class="bg-purple text-white px-3 py-2 text-uppercase font-weight-bold">Tech</span>
+                        <div class="d-flex h-100">
+                            <div class="align-self-end">
+                                <a href="#">
+                                    <h3 class="article-header text-white fs-5">Etiam quis quam. Nemo enim ipsam voluptatem quia.</h3>
+                                </a>
+                                <span class="text-white font-weight-light footer-date">May 25, 2048 / 9 min.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="box article-box full-box box-spacer d-flex rounded-0 position-relative overflow-hidden">
+                    <img class="position-absolute w-100 h-100" src="img/article4.jpg" alt="Náhledový obrázek">
+                    <div class="content h-100 p-5">
+                        <span class="bg-green px-3 py-2 text-uppercase font-weight-bold">Travel</span>
+                        <div class="d-flex h-100">
+                            <div class="align-self-end">
+                                <a href="#">
+                                    <h2 class="article-header text-white fs-3">Etiam quis quam. Nemo enim ipsam voluptatem quia.</h2>
+                                </a>
+                                <span class="text-white font-weight-light footer-date">May 25, 2048 / 9 min.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer py-5">
+    <div class="container d-flex justify-content-between">
+        <span class="text-muted lh-lg">All rights reserved. © 2048</span>
+        <img class="logo" src="img/logo.svg" alt="Logo blogu">
+    </div>
+</footer>
+</body>
+</html>
