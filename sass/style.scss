@@ -67,6 +67,10 @@ a {
   }
 
   .article-box {
+    img {
+      object-fit: cover;
+    }
+
     .content {
       z-index: 2;
 
@@ -123,6 +127,7 @@ a {
 .space-station-icon {
   height: 20rem;
   opacity: 40%;
+  max-width: 100%;
 }
 
 @media (max-width: 767.98px) {

@@ -10854,6 +10854,9 @@ a {
 .slice .half-box {
   height: 15rem;
 }
+.slice .article-box img {
+  object-fit: cover;
+}
 .slice .article-box .content {
   z-index: 2;
 }
@@ -10902,6 +10905,7 @@ a {
 .space-station-icon {
   height: 20rem;
   opacity: 40%;
+  max-width: 100%;
 }
 
 @media (max-width: 767.98px) {
