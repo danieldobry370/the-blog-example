@@ -10859,6 +10859,7 @@ a {
 }
 .slice .article-box .content {
   z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.5) 100%);
 }
 .slice .article-box .content .footer-date {
   opacity: 64%;
