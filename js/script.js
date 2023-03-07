@@ -7,15 +7,14 @@ function closeNav() {
 }
 
 window.addEventListener("load", (event) => {
-    const slicePost = document.querySelectorAll('.slice .article-box');
+    const slicePosts = document.querySelectorAll('.slice .article-box');
     const heights = [];
-
-    slicePost.forEach(post => {
+    slicePosts.forEach(post => {
         const height = post.clientHeight;
         heights.push(height);
     });
-
-    const averageHeight = heights.reduce((a, b) => a + b, 0) / heights.length;
+    const totalHeight = heights.reduce((a, b) => a + b, 0);
+    const averageHeight = totalHeight / heights.length;
     console.log(`Průměrná výška příspěvků: ${averageHeight}px`);
     const header = document.querySelectorAll('.article-header');
     let totalCharacters = 0;
