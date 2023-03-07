@@ -7,10 +7,16 @@ function closeNav() {
 }
 
 window.addEventListener("load", (event) => {
-    const countAll = document.querySelectorAll('.article-box').length;
-    console.log(`Počet příspěvků: ${countAll}`);
-    const heightAll = document.querySelectorAll('.half-box').length * document.querySelector('.half-box').offsetHeight + document.querySelectorAll('.full-box').length * document.querySelector('.full-box').offsetHeight;
-    console.log(`Průměrná výška příspěvků: ${heightAll / countAll}px`);
+    const slicePost = document.querySelectorAll('.slice .article-box');
+    const heights = [];
+
+    slicePost.forEach(post => {
+        const height = post.clientHeight;
+        heights.push(height);
+    });
+
+    const averageHeight = heights.reduce((a, b) => a + b, 0) / heights.length;
+    console.log(`Průměrná výška příspěvků: ${averageHeight}px`);
     const header = document.querySelectorAll('.article-header');
     let totalCharacters = 0;
     header.forEach(function(element) {
